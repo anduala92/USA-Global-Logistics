@@ -1,0 +1,75 @@
+{
+  "info": {
+    "name": "USA Global Logistics API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {"method": "GET", "url": "{{baseUrl}}/health"}
+        }
+      ]
+    },
+    {
+      "name": "Customers",
+      "item": [
+        {"name": "List", "request": {"method": "GET", "url": "{{baseUrl}}/customers"}},
+        {"name": "Create", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "url": "{{baseUrl}}/customers", "body": {"mode": "raw", "raw": "{\n  \"name\": \"Acme Dealer\",\n  \"contactEmail\": \"ops@acme.com\",\n  \"phone\": \"+1 555-0100\"\n}"}}}
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {"name": "List", "request": {"method": "GET", "url": "{{baseUrl}}/orders"}},
+        {"name": "Create", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "url": "{{baseUrl}}/orders", "body": {"mode": "raw", "raw": "{\n  \"customerId\": {{customerId}},\n  \"status\": \"New\"\n}"}}}
+      ]
+    },
+    {
+      "name": "Locations",
+      "item": [
+        {"name": "List", "request": {"method": "GET", "url": "{{baseUrl}}/locations"}},
+        {"name": "Create Pickup", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "url": "{{baseUrl}}/locations", "body": {"mode": "raw", "raw": "{\n  \"name\": \"Acme Auction\",\n  \"address1\": \"100 Main St\",\n  \"city\": \"Dallas\",\n  \"state\": \"TX\",\n  \"zip\": \"75201\"\n}"}}},
+        {"name": "Create Delivery", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "url": "{{baseUrl}}/locations", "body": {"mode": "raw", "raw": "{\n  \"name\": \"Prime Motors\",\n  \"address1\": \"200 Elm St\",\n  \"city\": \"Atlanta\",\n  \"state\": \"GA\",\n  \"zip\": \"30301\"\n}"}}}
+      ]
+    },
+    {
+      "name": "Vehicle Models",
+      "item": [
+        {"name": "List", "request": {"method": "GET", "url": "{{baseUrl}}/vehicle-models"}},
+        {"name": "Create", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "url": "{{baseUrl}}/vehicle-models", "body": {"mode": "raw", "raw": "{\n  \"make\": \"Toyota\",\n  \"model\": \"Camry\"\n}"}}}
+      ]
+    },
+    {
+      "name": "Vehicles",
+      "item": [
+        {"name": "List", "request": {"method": "GET", "url": "{{baseUrl}}/vehicles"}},
+        {"name": "Create", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "url": "{{baseUrl}}/vehicles", "body": {"mode": "raw", "raw": "{\n  \"vin\": \"1HGCM82633A123456\",\n  \"year\": 2020,\n  \"color\": \"Black\",\n  \"modelId\": {{vehicleModelId}},\n  \"operable\": true,\n  \"valueUsd\": 15000\n}"}}}
+      ]
+    },
+    {
+      "name": "Carriers & Drivers",
+      "item": [
+        {"name": "Carriers List", "request": {"method": "GET", "url": "{{baseUrl}}/carriers"}},
+        {"name": "Carrier Create", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "url": "{{baseUrl}}/carriers", "body": {"mode": "raw", "raw": "{\n  \"legalName\": \"US Logistics LLC\",\n  \"dotNumber\": \"1234567\"\n}"}}},
+        {"name": "Drivers List", "request": {"method": "GET", "url": "{{baseUrl}}/drivers"}},
+        {"name": "Driver Create", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "url": "{{baseUrl}}/drivers", "body": {"mode": "raw", "raw": "{\n  \"carrierId\": {{carrierId}},\n  \"fullName\": \"John Doe\"\n}"}}}
+      ]
+    },
+    {
+      "name": "Shipments",
+      "item": [
+        {"name": "List", "request": {"method": "GET", "url": "{{baseUrl}}/shipments"}},
+        {"name": "Create", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "url": "{{baseUrl}}/shipments", "body": {"mode": "raw", "raw": "{\n  \"orderId\": {{orderId}},\n  \"pickupLocationId\": {{pickupId}},\n  \"deliveryLocationId\": {{deliveryId}},\n  \"status\": \"Created\"\n}"}}},
+        {"name": "Assign Vehicles", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "url": "{{baseUrl}}/shipments/{{shipmentId}}/vehicles", "body": {"mode": "raw", "raw": "[ {{vehicleId}} ]"}}},
+        {"name": "Assign Drivers", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "url": "{{baseUrl}}/shipments/{{shipmentId}}/drivers", "body": {"mode": "raw", "raw": "[ { \"driverId\": {{driverId}}, \"role\": \"Primary\" } ]"}}},
+        {"name": "Advance Status", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "url": "{{baseUrl}}/shipments/{{shipmentId}}/status", "body": {"mode": "raw", "raw": "{\n  \"status\": \"Scheduled\"\n}"}}}
+      ]
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5151" }
+  ]
+}
