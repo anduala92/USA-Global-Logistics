@@ -88,7 +88,7 @@ Healthcheck: https://localhost:7083/health
 2) In usagl-ui:
 
 - npm install
-- set VITE_API_BASE_URL=https://localhost:7083
+- set VITE_API_BASE_URL=https://localhost:5151
 - npm run dev
 
 Open: http://localhost:5173
