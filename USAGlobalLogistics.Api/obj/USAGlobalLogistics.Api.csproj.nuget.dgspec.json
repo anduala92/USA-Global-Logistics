@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alex\\Desktop\\ПУ Софтуерно Инж\\2-ри Курс\\USAGlobalLogistics.Api\\USAGlobalLogistics.Api.csproj": {}
+    "C:\\Users\\HP\\OneDrive\\Desktop\\USA GL\\USA-Global-Logistics\\USAGlobalLogistics.Api\\USAGlobalLogistics.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alex\\Desktop\\ПУ Софтуерно Инж\\2-ри Курс\\USAGlobalLogistics.Api\\USAGlobalLogistics.Api.csproj": {
+    "C:\\Users\\HP\\OneDrive\\Desktop\\USA GL\\USA-Global-Logistics\\USAGlobalLogistics.Api\\USAGlobalLogistics.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alex\\Desktop\\ПУ Софтуерно Инж\\2-ри Курс\\USAGlobalLogistics.Api\\USAGlobalLogistics.Api.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\OneDrive\\Desktop\\USA GL\\USA-Global-Logistics\\USAGlobalLogistics.Api\\USAGlobalLogistics.Api.csproj",
         "projectName": "USAGlobalLogistics.Api",
-        "projectPath": "C:\\Users\\Alex\\Desktop\\ПУ Софтуерно Инж\\2-ри Курс\\USAGlobalLogistics.Api\\USAGlobalLogistics.Api.csproj",
-        "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alex\\Desktop\\ПУ Софтуерно Инж\\2-ри Курс\\USAGlobalLogistics.Api\\obj\\",
+        "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\USA GL\\USA-Global-Logistics\\USAGlobalLogistics.Api\\USAGlobalLogistics.Api.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\OneDrive\\Desktop\\USA GL\\USA-Global-Logistics\\USAGlobalLogistics.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
